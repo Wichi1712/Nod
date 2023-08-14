@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World!</title>
+	<link rel="stylesheet" href="estilos.css" media="screen" title="no title" charset="utf-8">
+	<script type="text/javascript" src="main.js"></script>
+  </head>
+  
+	<script>
+		function mensaje(){
+			
+			var nombre = prompt("Ingresa tu nombre para que te salude","");
+			alert("Bienvenido " + nombre);
+		}
+		//Nueva ventana
+		var gui = require("nw.gui");
+		
+		gui.Window.open(
+			"cuadro.html", {
+				width: 300,
+				height: 300,
+				position: "center",
+				frame: false
+			},
+			function(cuadro){
+			
+				setTimeout(function(){
+					cuadro.close(true);
+					gui.Window.get().show();
+				}, 5 * 1000);
+			}
+		);
+
+	</script>
+  <body>
+	<div class= "window">
+		<div class= "barraTitulo">
+			<div class= "opcion1"><a href="javascript: cerrar()">&nbsp;&nbsp;&nbsp;</a></div>
+			<div class= "opcion2"><a href="javascript: minimizar()">&nbsp;&nbsp;&nbsp;</a></div>
+			<div class= "opcion3"><a href="javascript: maximizar()">&nbsp;&nbsp;&nbsp;</a></div>
+			<div class= "arrastrar">Arrastre la pagina desde aqui</div>
+			<div class= "maximize"><a href="javascript: maximizar()">Max</a></div>
+		
+		</div>
+		
+		<div class= "pagina">
+			<h1>Hello World!</h1>
+			Esta es una prueba para NW.JS
+			<br>
+			<button onclick="mensaje();">Este es un boton manda saludos</button>
+			<br><p>
+	
+			<img src="espacio 1.jpg" value="200" />
+			Esta es una imagen de una parte del universo pero no hace nada.
+		</div>
+	
+	</div>
+	
+	<div id= "txt">El texto dice...</div>
+	<button onclick="mostrarTexto()">Presione aqui</button>
+	
+	<label >Nombre: </label>
+	<input type="text" placeholder="Tu texto aparecera aqui" id="name" name="name">
+	<div id= "entrada"></div>
+    
+  </body>
+</html>

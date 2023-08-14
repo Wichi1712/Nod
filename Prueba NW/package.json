@@ -1,0 +1,15 @@
+{
+  "name": "helloworld",
+  "main": "index.html",
+
+  
+  "window": {
+  "frame": false,//Oculta o muestra el marco
+  "toolbar": true,//Oculta o muestra la barra de opciones
+  "show": true,//Mostrar ventana
+  "resizable": false,//Redimensionar la ventana
+  "width": 900,
+  "height": 500,
+  "transparent": false
+  }
+}
